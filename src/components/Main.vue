@@ -5,6 +5,7 @@
 
         <Banner></Banner>
         <ListTile></ListTile>
+        <Subscribe></Subscribe>
 
     </div>
 
@@ -14,10 +15,11 @@
 
     import Banner from './Banner';
     import ListTile from './ListTile';
+    import Subscribe from './Subscribe';
 
     export default {
         name: 'Main',
-        components: {Banner, ListTile}
+        components: {Banner, ListTile, Subscribe}
     };
 
 </script>
