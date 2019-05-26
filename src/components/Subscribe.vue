@@ -1,75 +1,122 @@
 <template>
-
     <div class="subscribe">
-    
-        <h2>Будь всегда в курсе выгодных предложений</h2>
+        <h2>будь всегда в курсе выгодных предложений</h2>
         <h3>подписывайся и следи за новинками и выгодными предложениями.</h3>
-        <form>
+        <form v-show="!showSuccess">
             <input type="email" name="email" v-model="email" placeholder="email"/>
-            <button type="submit" :disabled="email.lenght === 0 || showError">записаться</button>
+            <button type="submit"
+                    :disabled="email.length === 0 || showError"
+                    @click="submitSubscribe">
+                записаться
+            </button>
         </form>
-        <div class="subscribe-error" v-show="showError">Некорректный email. Попробуйте ещё раз)</div>
-
+        <div class="subscribe-error" v-show="showError">
+            Некорректный email. Попробуйте еще раз
+        </div>
+        <div class="subscribe-success" v-show="showSuccess">
+            Вы успешно подписаны
+        </div>
     </div>
-
 </template>
 
 <script>
+
     export default {
         name: "Subscribe",
-        data(){
-            return{
+        data() {
+
+            return {
                 email: '',
-                showError: false
+                showError: false,
+                showSuccess: false
             };
         },
         watch: {
-            email(newVal, oldVal){
+            email( newVal, oldVal ) {
+
                 console.log(oldVal);
                 console.log(newVal);
 
-                if(~newVal.indexOf('@') && newVal.indexOf('@') > 0 &&
-                ~newVal.lastIndexOf('.') && newVal.lastIndexOf('.') > newVal.lastIndexOf('@') + 1 &&
-                newVal.lastIndexOf('.') < newVal.length - 1 ){
+                if (~newVal.indexOf('@') && newVal.indexOf('@') > 0 &&
+                    ~newVal.lastIndexOf('.') && newVal.lastIndexOf('.') > newVal.indexOf('@') + 1 &&
+                    newVal.lastIndexOf('.') < newVal.length - 1
+                ) {
                     this.showError = false;
-                }
-                else{
+                } else {
                     this.showError = true;
                 }
             }
+        },
+        methods: {
+            submitSubscribe( event ) {
+
+                event.preventDefault();
+
+                if (!!this.email && this.email.length > 0) {
+
+                    // const body = JSON.stringify({
+
+                    // })
+
+                    fetch(
+                        'http://localhost/subscribe.php',
+                        {
+                            method: 'POST',
+                            headers: {
+                                'Accept' : 'application/json',
+                                'Content-Type' : 'application/json'
+                            },
+                            mode: 'cors',
+                             body:  JSON.stringify({email: this.email})
+                        }
+                    ).then(res => res.json()).then(res => {
+
+                        console.log(res);
+
+                        if (res) {
+                            this.showSuccess = true;
+                        } else {
+                            this.showError = true;
+                        }
+                    });
+                }
+            }
         }
-        
     }
+
 </script>
 
 <style scoped>
 
-    .subscribe{
+    .subscribe {
         display: flex;
-        flex-direction: column;
         align-items: center;
+        flex-direction: column;
         margin: 7rem 0;
     }
-    .subscribe h2{
-        font-size: 2rem;
+
+    .subscribe h2 {
         text-transform: uppercase;
+        font-size: 2rem;
         opacity: .8;
         margin-bottom: 10px;
     }
-    .subscribe h3{
+
+    .subscribe h3 {
         font-style: italic;
         font-size: .9rem;
-        margin-top:0;
+        margin-top: 0;
         color: grey;
     }
-    .subscribe form{
-        margin: 1rem auto 0;
+
+    .subscribe form {
         display: flex;
         align-items: center;
-        width: 40%;
-
+        width: 60%;
+        margin: 1rem auto 0;
     }
-    .subscribe form input{
+
+    .subscribe form input {
         font-style: italic;
         margin-right: 0;
         width: 80%;
@@ -78,14 +125,28 @@
         border-color: grey;
         border-style: solid;
     }
-    .subscribe form button{
+
+    .subscribe form button {
         height: 100%;
         margin-left: 0;
         background-color: orange;
         color: white;
-        border: 1 px solid orange;
+        border: 1px solid orange;
         padding: 15px;
     }
 
-    
+    .subscribe-error, .subscribe-success {
+        margin-top: 1rem;
+        font-style: italic;
+        font-size: .8rem;
+    }
+
+    .subscribe-error{
+        color: red;
+    }
+
+    .subscribe-success{
+        color: green;
+    }
+
 </style>

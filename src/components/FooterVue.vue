@@ -90,40 +90,51 @@
 
 <style scoped>
 
-    footer{
+    footer {
         display: flex;
         flex-direction: row;
         /*justify-content: space-between;*/
         margin: 20px;
     }
 
-    footer > div{
+    footer > div {
         width: 33%;
         box-sizing: border-box;
     }
 
-    footer > div:not(:first-child){
+    footer > div:not(:first-child) {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    footer > div:not(:last-child){
+    footer > div:not(:last-child) {
         border-right: 1px solid lightgrey;
     }
 
-    nav{
+    nav {
         display: flex;
         flex-direction: column;
     }
 
-    nav > span{
+    nav > span {
         color: grey;
         margin-bottom: 10px;
     }
-    nav.social svg{
-        width:20px;
-        height:15px;
+
+    nav.social{
+        flex-direction: row;
+    }
+
+    nav.social svg {
+        width: 20px;
+        height: 16px;
+    }
+
+    nav.social > span {
+        padding: 5px;
+        border: 1px solid grey;
+        margin-right: 10px;
     }
 
 
