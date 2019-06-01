@@ -28,9 +28,9 @@
 // debugger
 
            fetch(
-               'http://localhost/goods.php',
+               'http://localhost/htdocs/goods.php',
                {
-                   method: 'GET',
+                   method: 'POST',
                             headers: {
                                 'Accept' : 'application/json',
                                 'Content-Type' : 'application/json'
