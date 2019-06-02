@@ -44,9 +44,26 @@ CREATE TABLE `goods` (
 --
 
 INSERT INTO `goods` (`ID`, `NAME`, `PRICE`, `CURRENCY`, `PHOTO`, `DESCRIPTION`, `VENDER-CODE`, `SIZE`) VALUES
-(1, 'Кеды', '4999', 'RUB', 'http://localhost/htdocs/images/7.jpg', 'DFKJNDFJ', '32156', '42'),
-(2, 'BIG BEN', '99999', 'EUR', 'http://localhost/big-ben.png', 'DFHKJHDBSDJLBDHB', '565484', '$'),
-(3, 'Куртка', '15000', 'RUB', 'http://localhost/htdocs/images/1.jpg', 'Самая теплая куртка для вас', '325164', 'L');
+(1, 'Kurtka blue', '5400', 'RUB', 'http://localhost/htdocs/images/1.jpg', 'DFKJNDFJ', '32156', 'S'),
+(2, 'Kurtka blue', '5400', 'RUB', 'http://localhost/htdocs/images/1.jpg', 'DFKJNDFJ', '32156', 'M'),
+(3, 'Kurtka blue', '5400', 'RUB', 'http://localhost/htdocs/images/1.jpg', 'DFKJNDFJ', '32156', 'L'),
+(4, 'Kurtka blue', '5400', 'RUB', 'http://localhost/htdocs/images/1.jpg', 'DFKJNDFJ', '32156', 'XL'),
+(5, 'kozhanaya kurtka', '22500', 'RUB', 'http://localhost/htdocs/images/2.jpg', 'DFHKJHDBSDJLBDHB', '565484', 'S'),
+(6, 'kozhanaya kurtka', '22500', 'RUB', 'http://localhost/htdocs/images/2.jpg', 'DFHKJHDBSDJLBDHB', '565484', 'M'),
+(7, 'kozhanaya kurtka', '22500', 'RUB', 'http://localhost/htdocs/images/2.jpg', 'DFHKJHDBSDJLBDHB', '565484', 'L'),
+(8, 'kozhanaya kurtka', '22500', 'RUB', 'http://localhost/htdocs/images/2.jpg', 'DFHKJHDBSDJLBDHB', '565484', 'XL'),
+(9, 'kurtka s karmanami', '9200', 'RUB', 'http://localhost/htdocs/images/3.jpg', 'Самая теплая куртка для вас', '325164', 'S'),
+(10, 'kurtka s karmanami', '9200', 'RUB', 'http://localhost/htdocs/images/3.jpg', 'Самая теплая куртка для вас', '325164', 'M'),
+(11, 'kurtka s karmanami', '9200', 'RUB', 'http://localhost/htdocs/images/3.jpg', 'Самая теплая куртка для вас', '325164', 'L'),
+(12, 'kurtka s karmanami', '9200', 'RUB', 'http://localhost/htdocs/images/3.jpg', 'Самая теплая куртка для вас', '325164', 'XL'),
+(13, 'kurtka s kapyusonom', '6100', 'RUB', 'http://localhost/htdocs/images/4.jpg', 'Самая теплая куртка для вас', '325158', 'S'),
+(14, 'kurtka s kapyusonom', '6100', 'RUB', 'http://localhost/htdocs/images/4.jpg', 'Самая теплая куртка для вас', '325158', 'M'),
+(15, 'kurtka s kapyusonom', '6100', 'RUB', 'http://localhost/htdocs/images/4.jpg', 'Самая теплая куртка для вас', '325158', 'L'),
+(16, 'kurtka s kapyusonom', '6100', 'RUB', 'http://localhost/htdocs/images/4.jpg', 'Самая теплая куртка для вас', '325158', 'XL'),
+(17, 'kurtka casual', '8800', 'RUB', 'http://localhost/htdocs/images/5.jpg', 'Самая теплая куртка для вас', '325146', 'S'),
+(18, 'kurtka casual', '8800', 'RUB', 'http://localhost/htdocs/images/5.jpg', 'Самая теплая куртка для вас', '325146', 'M'),
+(19, 'kurtka casual', '8800', 'RUB', 'http://localhost/htdocs/images/5.jpg', 'Самая теплая куртка для вас', '325146', 'L'),
+(20, 'kurtka casual', '8800', 'RUB', 'http://localhost/htdocs/images/5.jpg', 'Самая теплая куртка для вас', '325146', 'XL'),
 
 --
 -- Индексы сохранённых таблиц
